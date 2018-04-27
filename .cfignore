@@ -1,4 +1,6 @@
-.git/
 node_modules/
-test/
-vcap-local.js
+.idea/
+coverage
+npm-debug.log
+readme_images
+test

@@ -1,7 +1,8 @@
-node_modules
-node_modules_linux
-server/localdev-config.json
-server/localdev-config.json
-vcap-local.js
-credentials.json
-localdev-config.json
+node_modules/
+dist/
+temp/
+.idea/
+coverage
+.env
+npm-debug.log
+.jshintrc
