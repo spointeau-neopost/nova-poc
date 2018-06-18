@@ -354,10 +354,10 @@ function checkForParcelTV2(data, action, callback) {
 						var jsonData = JSON.parse(JSON.stringify(response.data.data));
 						if(response.data.total == 1) {
 							var result = jsonData[0];
-							responseText += 'Latest status for your parcel ' + result._source.attributes.shipmentReference + ' for ' + result._source.attributes.deliveryAddress.contact.personCivility + ' ' + result._source.attributes.deliveryAddress.contact.personFirstName + ' ' + result._source.attributes.deliveryAddress.contact.personLastName + ' is</br>';
+							responseText += 'Latest status for your parcel ' + result._source.attributes.shipmentReference + ' for ' + result._source.attributes.deliveryAddress.contact.personCivility + ' ' + result._source.attributes.deliveryAddress.contact.personFirstName + ' ' + result._source.attributes.deliveryAddress.contact.personLastName + ' is ';
 							
 							var eventDate = new Date(result._source.current.event.occurredAt);
-							responseText += '"' + result._source.current.event.desc + '" ('+ result._source.current.event.status +') - ' + eventDate.toLocaleString('fr-FR') + '.';
+							responseText += '"' + result._source.current.phase.name + '" ('+ result._source.current.event.status +' - ' + result._source.current.event.desc +') - ' + eventDate.toLocaleString('fr-FR') + '.';
 						} else {
 							responseText += 'I have found ' + response.data.total + ' associated to that request.';
 						}
